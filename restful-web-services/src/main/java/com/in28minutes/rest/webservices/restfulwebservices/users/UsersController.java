@@ -29,6 +29,8 @@ public class UsersController {
         return service.findAll();
     }
 
+    // we use two classes to implement HATEOAS in spring boot
+    // EntityModel and WebMvcLinkBuilder
     @GetMapping("/users/{id}")
     public EntityModel<Users> getOneUser(@PathVariable Integer id){
         Users users = service.findOne(id);

@@ -26,6 +26,17 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- Spring boot actuator is a spring package that give us acces to the following endpoint
+		 beans: to get a list of all the beans in the app
+		 health: application health info
+		 metrics: application metrics
+		 mappings: Details around the request mapping
+		 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<!-- depency to add structured data with links to respective api
 		 hateoas: Hypermedia as the engine of the application state
 		 We will use a standard structure called: HAL
@@ -35,6 +46,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
+
+		
 
 		<dependency>
 			<groupId>jakarta.validation</groupId>
@@ -47,12 +60,18 @@
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
 
-		<!-- Dependency for documentation
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-			<version>2.0.0-M4</version>
-		</dependency>  -->
+		<!-- Dependency for documentation -->
+<!--		<dependency>-->
+<!--			<groupId>org.springdoc</groupId>-->
+<!--			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+<!--			<version>2.0.0-M4</version>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>io.springfox</groupId>-->
+<!--			<artifactId>springfox-swagger-ui</artifactId>-->
+<!--			<version>3.0.0</version>-->
+<!--		</dependency>-->
 
 		<!-- Dependency to accept XML headers
 		<dependency>
