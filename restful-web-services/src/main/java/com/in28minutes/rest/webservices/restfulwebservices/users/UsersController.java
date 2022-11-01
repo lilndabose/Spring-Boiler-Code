@@ -4,6 +4,9 @@ import jakarta.validation.Valid;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContext;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -27,8 +30,13 @@ public class UsersController {
     }
 
     @GetMapping("/users/{id}")
-    public Users getOneUser(@PathVariable Integer id){
-        return service.findOne(id);
+    public EntityModel<Users> getOneUser(@PathVariable Integer id){
+        Users users = service.findOne(id);
+        EntityModel<Users> entityModel = EntityModel.of(users);
+        WebMvcLinkBuilder link = linkTo(methodOn(this.getClass()).retrieveAllUser());
+        entityModel.add(link.withRel("all-users"));
+
+        return entityModel;
     }
 
     @PostMapping("/users")

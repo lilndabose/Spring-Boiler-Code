@@ -26,6 +26,16 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!-- depency to add structured data with links to respective api
+		 hateoas: Hypermedia as the engine of the application state
+		 We will use a standard structure called: HAL
+		 HAL: JSON Hypertext Application Language
+		 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>jakarta.validation</groupId>
 			<artifactId>jakarta.validation-api</artifactId>

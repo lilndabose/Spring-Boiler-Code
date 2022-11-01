@@ -25,6 +25,7 @@ public class UserDaoService {
         return user;
     }
 
+    // to implement HATEOAS we use the following class: EntityModel and WebMvcLinkBuilder
     public Users findOne(Integer id){
         Predicate<? super Users> predicate = user-> user.getId().equals(id);
         Users item = this.users.stream().filter(predicate).findFirst().orElse(null);
